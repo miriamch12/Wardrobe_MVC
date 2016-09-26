@@ -9,8 +9,10 @@ namespace WardrobeMVC.Models
     public class Occasion
     {
         [Key]
-        public int occasionID { get; set; }
-        public string occasionName { get; set; }
+        public int OccasionId { get; set; }
+        public string OccasionName { get; set; }
+
+        public virtual ICollection<Top> Tops { get; set; }
 
     }
 }

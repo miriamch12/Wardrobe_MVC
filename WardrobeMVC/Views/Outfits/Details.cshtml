@@ -1,0 +1,18 @@
+﻿@model WardrobeMVC.Models.Outfit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Outfit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OutfitId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

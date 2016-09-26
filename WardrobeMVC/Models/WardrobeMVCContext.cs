@@ -23,8 +23,16 @@ namespace WardrobeMVC.Models
 
         public System.Data.Entity.DbSet<WardrobeMVC.Models.Top> Tops { get; set; }
 
+        public System.Data.Entity.DbSet<WardrobeMVC.Models.Season> Seasons { get; set; }
+
+        public System.Data.Entity.DbSet<WardrobeMVC.Models.Color> Colors { get; set; }
+
         public System.Data.Entity.DbSet<WardrobeMVC.Models.Shoe> Shoes { get; set; }
 
         public System.Data.Entity.DbSet<WardrobeMVC.Models.Bottom> Bottoms { get; set; }
+
+        public System.Data.Entity.DbSet<WardrobeMVC.Models.Outfit> Outfits { get; set; }
+
+        public System.Data.Entity.DbSet<WardrobeMVC.Models.Accessory> Accessories { get; set; }
     }
 }

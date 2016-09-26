@@ -10,22 +10,22 @@ namespace WardrobeMVC.Models
     public class Top
     {
         [Key]
-        public int TopID { get; set; }
+        public int TopId { get; set; }
         public string TopName { get; set; }
         public string TopPhoto { get; set; }
 
         public virtual ICollection<Outfit> Outfits { get; set; }
 
         [ForeignKey("Color")]
-        public int ColorID { get; set; }
+        public int ColorId { get; set; }
         public virtual Color Color { get; set; }
 
         [ForeignKey("Season")]
-        public int SeasonID { get; set; }
+        public int SeasonId { get; set; }
         public virtual Season Season { get; set; }
 
         [ForeignKey("Occasion")]
-        public int OccasionID { get; set; }
+        public int OccasionId { get; set; }
         public virtual Occasion Occasion { get; set; }
 
 

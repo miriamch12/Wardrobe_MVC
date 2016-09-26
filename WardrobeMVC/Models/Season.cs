@@ -9,8 +9,9 @@ namespace WardrobeMVC.Models
     public class Season
     {
         [Key]
-        public int SeasonID { get; set; }
+        public int SeasonId { get; set; }
         public string SeasonName { get; set; }
 
+        public virtual ICollection<Top> Tops { get; set; }
     }
 }

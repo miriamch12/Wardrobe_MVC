@@ -10,24 +10,24 @@ namespace WardrobeMVC.Models
     public class Outfit
     {
         [Key]
-        public int OutfitID { get; set; }
+        public int OutfitId { get; set; }
 
 
-        [ForeignKey("Bottom")]
-        public int BottomID { get; set; }      
-        public virtual Bottom Bottom { get; set; }
+        //[ForeignKey("Bottom")]
+        //public int BottomID { get; set; }
+        //public virtual Bottom Bottom { get; set; }
 
-        [ForeignKey("Shoe")]
-        public int ShoeID { get; set; }
-        public virtual Shoe Shoe { get; set;}
+        //[ForeignKey("Shoe")]
+        //public int ShoeID { get; set; }
+        //public virtual Shoe Shoe { get; set; }
 
-        [ForeignKey("Top")]
-        public int TopID { get; set; }
-        public virtual Top Top { get; set; }
+        //[ForeignKey("Top")]
+        //public int TopId { get; set; }
+        //public virtual Top Top { get; set; }
 
-        [ForeignKey("Accessory")]
-        public int AccessoryID { get; set; }
-        public virtual Accessory Accessory { get; set; }
+        //[ForeignKey("Accessory")]
+        //public int AccessoryID { get; set; }
+        //public virtual Accessory Accessory { get; set; }
     }
 
 }
