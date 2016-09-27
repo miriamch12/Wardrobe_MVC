@@ -10,17 +10,17 @@ using WardrobeMVC.Models;
 
 namespace WardrobeMVC.Controllers
 {
-    public class OccasionsController : Controller
+    public class Occasions1Controller : Controller
     {
         private WardrobeMVCContext db = new WardrobeMVCContext();
 
-        // GET: Occasions
+        // GET: Occasions1
         public ActionResult Index()
         {
             return View(db.Occasions.ToList());
         }
 
-        // GET: Occasions/Details/5
+        // GET: Occasions1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +35,18 @@ namespace WardrobeMVC.Controllers
             return View(occasion);
         }
 
-        // GET: Occasions/Create
+        // GET: Occasions1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Occasions/Create
+        // POST: Occasions1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "occasionID,occasionName")] Occasion occasion)
+        public ActionResult Create([Bind(Include = "OccasionId,OccasionName")] Occasion occasion)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace WardrobeMVC.Controllers
             return View(occasion);
         }
 
-        // GET: Occasions/Edit/5
+        // GET: Occasions1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,12 +73,12 @@ namespace WardrobeMVC.Controllers
             return View(occasion);
         }
 
-        // POST: Occasions/Edit/5
+        // POST: Occasions1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "occasionID,occasionName")] Occasion occasion)
+        public ActionResult Edit([Bind(Include = "OccasionId,OccasionName")] Occasion occasion)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace WardrobeMVC.Controllers
             return View(occasion);
         }
 
-        // GET: Occasions/Delete/5
+        // GET: Occasions1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace WardrobeMVC.Controllers
             return View(occasion);
         }
 
-        // POST: Occasions/Delete/5
+        // POST: Occasions1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

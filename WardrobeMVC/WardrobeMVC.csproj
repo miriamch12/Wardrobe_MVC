@@ -160,7 +160,7 @@
     <Compile Include="Controllers\BottomsController.cs" />
     <Compile Include="Controllers\ColorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OccasionsController.cs" />
+    <Compile Include="Controllers\Occasions1Controller.cs" />
     <Compile Include="Controllers\OutfitsController.cs" />
     <Compile Include="Controllers\SeasonsController.cs" />
     <Compile Include="Controllers\ShoesController.cs" />
@@ -182,6 +182,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\black jean short summer.jpg" />
+    <Content Include="Content\Images\download %282%29.jpg" />
+    <Content Include="Content\Images\grey gloves winter.jpg" />
+    <Content Include="Content\Images\grey legging winter.jpg" />
+    <Content Include="Content\Images\lavender pencil skirt spring.jpg" />
+    <Content Include="Content\Images\lavender umbrella spring.jpg" />
+    <Content Include="Content\Images\multi color top.jpg" />
+    <Content Include="Content\Images\nude corduroy pants fall.jpg" />
+    <Content Include="Content\Images\nude crop top.jpg" />
+    <Content Include="Content\Images\sandals black summer.jpg" />
+    <Content Include="Content\Images\sunglasses summer.jpg" />
+    <Content Include="Content\Images\ugg boots winter.jpg" />
+    <Content Include="Content\Images\white sweater.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -254,6 +267,11 @@
     <Content Include="Views\Accessories\Details.cshtml" />
     <Content Include="Views\Accessories\Edit.cshtml" />
     <Content Include="Views\Accessories\Index.cshtml" />
+    <Content Include="Views\Occasions1\Create.cshtml" />
+    <Content Include="Views\Occasions1\Delete.cshtml" />
+    <Content Include="Views\Occasions1\Details.cshtml" />
+    <Content Include="Views\Occasions1\Edit.cshtml" />
+    <Content Include="Views\Occasions1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
