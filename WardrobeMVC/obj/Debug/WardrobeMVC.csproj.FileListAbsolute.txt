@@ -55,3 +55,7 @@ c:\users\wecancodeit\documents\visual studio 2015\Projects\WardrobeMVC\WardrobeM
 c:\users\wecancodeit\documents\visual studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.dll
 c:\users\wecancodeit\documents\visual studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.pdb
 c:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.csprojResolveAssemblyReference.cache
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.Migrations.InitialCreate.resources
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.csproj.GenerateResource.Cache
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.Migrations.MadeChanges.resources
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\WardrobeMVC\WardrobeMVC\obj\Debug\WardrobeMVC.Migrations.RemovedConstraint.resources

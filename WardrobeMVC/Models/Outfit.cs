@@ -12,22 +12,25 @@ namespace WardrobeMVC.Models
         [Key]
         public int OutfitId { get; set; }
 
+        public Outfit()
+        {
+            Accessories = new HashSet<Accessory>();
+        }
 
-        //[ForeignKey("Bottom")]
-        //public int BottomID { get; set; }
-        //public virtual Bottom Bottom { get; set; }
+        [ForeignKey("Bottom")]
+        public int BottomID { get; set; }
+        public virtual Bottom Bottom { get; set; }
 
-        //[ForeignKey("Shoe")]
-        //public int ShoeID { get; set; }
-        //public virtual Shoe Shoe { get; set; }
+        [ForeignKey("Shoe")]
+        public int ShoeID { get; set; }
+        public virtual Shoe Shoe { get; set; }
 
-        //[ForeignKey("Top")]
-        //public int TopId { get; set; }
-        //public virtual Top Top { get; set; }
+        [ForeignKey("Top")]
+        public int TopID { get; set; }
+        public virtual Top Top { get; set; }
 
-        //[ForeignKey("Accessory")]
-        //public int AccessoryID { get; set; }
-        //public virtual Accessory Accessory { get; set; }
+        public virtual ICollection<Accessory> Accessories { get; set; }
+
     }
 
 }

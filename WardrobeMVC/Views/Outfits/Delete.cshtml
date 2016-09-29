@@ -11,6 +11,30 @@
     <h4>Outfit</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bottom.BottomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bottom.BottomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shoe.ShoeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shoe.ShoeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Top.TopName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Top.TopName)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {

@@ -168,6 +168,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609262236334_InitialCreate.cs" />
+    <Compile Include="Migrations\201609262236334_InitialCreate.Designer.cs">
+      <DependentUpon>201609262236334_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609272246085_MadeChanges.cs" />
+    <Compile Include="Migrations\201609272246085_MadeChanges.Designer.cs">
+      <DependentUpon>201609272246085_MadeChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609292202306_RemovedConstraint.cs" />
+    <Compile Include="Migrations\201609292202306_RemovedConstraint.Designer.cs">
+      <DependentUpon>201609292202306_RemovedConstraint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\Bottom.cs" />
     <Compile Include="Models\Color.cs" />
@@ -178,6 +191,7 @@
     <Compile Include="Models\Top.cs" />
     <Compile Include="Models\WardrobeMVCContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\OutfitViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -293,6 +307,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609262236334_InitialCreate.resx">
+      <DependentUpon>201609262236334_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609272246085_MadeChanges.resx">
+      <DependentUpon>201609272246085_MadeChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609292202306_RemovedConstraint.resx">
+      <DependentUpon>201609292202306_RemovedConstraint.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
