@@ -81,7 +81,7 @@ namespace WardrobeMVC.Controllers
             ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "BottomName", outfit.BottomID);
             ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "ShoeName", outfit.ShoeID);
             ViewBag.TopID = new SelectList(db.Tops, "TopId", "TopName", outfit.TopID);
-            
+
 
             OutfitViewModel outfitViewModel = new OutfitViewModel
             {
@@ -99,60 +99,80 @@ namespace WardrobeMVC.Controllers
 
             return View(outfitViewModel);
         }
-    
 
-    // POST: Outfits/Edit/5
-    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Edit([Bind(Include = "OutfitId,BottomID,ShoeID,TopID")] Outfit outfit)
-    {
-        if (ModelState.IsValid)
+
+        // POST: Outfits/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "OutfitId,BottomID,ShoeID,TopID")] Outfit outfit, List<int> SelectedAccessories)
         {
-            db.Entry(outfit).State = EntityState.Modified;
+            if (ModelState.IsValid)
+            {
+                db.Entry(outfit).State = EntityState.Modified;
+                // create a variable to access the data in the database
+                var existingOutfit = db.Outfits.Find(outfit.OutfitId);
+
+                // change the existing properties to the new properties
+                existingOutfit.TopID = outfit.TopID;
+                existingOutfit.BottomID = outfit.BottomID;
+                existingOutfit.ShoeID = outfit.ShoeID;
+
+                existingOutfit.Accessories.Clear();
+
+                foreach (int accessoryId in SelectedAccessories)
+                {
+                    // find the accessory by its id and add it to the existing outfit
+                    existingOutfit.Accessories.Add(db.Accessories.Find(accessoryId));
+                }
+
+                //the below line takes the outfit that came from the user
+                //and saves it directly to the database
+                //we don't want to do this because we need to attach accessories to it!
+                //db.Entry(outfit).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "BottomName", outfit.BottomID);
+            ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "ShoeName", outfit.ShoeID);
+            ViewBag.TopID = new SelectList(db.Tops, "TopId", "TopName", outfit.TopID);
+            return View(outfit);
+        }
+
+        // GET: Outfits/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Outfit outfit = db.Outfits.Find(id);
+            if (outfit == null)
+            {
+                return HttpNotFound();
+            }
+            return View(outfit);
+        }
+
+        // POST: Outfits/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Outfit outfit = db.Outfits.Find(id);
+            db.Outfits.Remove(outfit);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "BottomName", outfit.BottomID);
-        ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "ShoeName", outfit.ShoeID);
-        ViewBag.TopID = new SelectList(db.Tops, "TopId", "TopName", outfit.TopID);
-        return View(outfit);
-    }
 
-    // GET: Outfits/Delete/5
-    public ActionResult Delete(int? id)
-    {
-        if (id == null)
+        protected override void Dispose(bool disposing)
         {
-            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        Outfit outfit = db.Outfits.Find(id);
-        if (outfit == null)
-        {
-            return HttpNotFound();
-        }
-        return View(outfit);
     }
-
-    // POST: Outfits/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public ActionResult DeleteConfirmed(int id)
-    {
-        Outfit outfit = db.Outfits.Find(id);
-        db.Outfits.Remove(outfit);
-        db.SaveChanges();
-        return RedirectToAction("Index");
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        if (disposing)
-        {
-            db.Dispose();
-        }
-        base.Dispose(disposing);
-    }
-}
 }
