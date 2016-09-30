@@ -1,5 +1,4 @@
-﻿@model WardrobeMVC.Models.Outfit
-
+﻿@model WardrobeMVC.ViewModels.OutfitViewModel
 @{
     ViewBag.Title = "Create";
 }
@@ -7,37 +6,49 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Outfit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.BottomID, "BottomID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Outfit.BottomID, "BottomID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("BottomID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.BottomID, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Outfit.BottomID, (SelectList)ViewBag.BottomId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Outfit.BottomID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ShoeID, "ShoeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Outfit.ShoeID, "ShoeID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ShoeID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ShoeID, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Outfit.ShoeID, (SelectList)ViewBag.ShoeId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Outfit.ShoeID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TopID, "TopID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Outfit.TopID, "TopID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TopID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TopID, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Outfit.TopID, (SelectList)ViewBag.TopId, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Outfit.TopID, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedAccessories, "Accessories", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.ListBoxFor(model => model.SelectedAccessories, new SelectList(Model.AllAccessories, "AccessoryID", "AccessoryName"));*@
+                @Html.ListBoxFor(model => model.SelectedAccessories, Model.AllAccessories)
+                <div>Hold down the ctrl key to select more than one accessory</div>
+
+            </div>
+
+
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Bottom.BottomName)
+           Top
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Shoe.ShoeName)
+            Bottom
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Top.TopName)
+           Shoes
         </th>
         <th>
             Accessories
@@ -30,17 +30,17 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Top.TopName)
+                <img src="@Url.Content(item.Top.TopPhoto)" />
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Bottom.BottomName)
                 <img src="@Url.Content(item.Bottom.BottomPhoto)" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Shoe.ShoeName)
                 <img src="@Url.Content(item.Shoe.ShoePhoto)" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Top.TopName)
-                <img src="@Url.Content(item.Top.TopPhoto)" />
-            </td>
+            </td>           
             <td>
                 @foreach (var accessory in item.Accessories)
                 {
