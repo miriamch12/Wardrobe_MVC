@@ -40,10 +40,28 @@ namespace WardrobeMVC.Controllers
         // GET: Outfits/Create
         public ActionResult Create()
         {
+            Outfit outfit = new Outfit();
             ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "BottomName");
             ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "ShoeName");
             ViewBag.TopID = new SelectList(db.Tops, "TopId", "TopName");
-            return View();
+
+            OutfitViewModel outfitViewModel = new OutfitViewModel
+            {
+                Outfit = outfit,
+                // Look up all accessories, then converts them into
+                // SelectListItem objects
+                AllAccessories = (from a in db.Accessories
+                                  select new SelectListItem
+
+                                  {
+                                      Value = a.AccessoryID.ToString(),
+                                      Text = a.AccessoryName
+                                  })
+            };
+
+            return View(outfitViewModel);
+
+            
         }
 
         // POST: Outfits/Create
@@ -51,10 +69,24 @@ namespace WardrobeMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OutfitId,BottomID,ShoeID,TopID")] Outfit outfit)
+        public ActionResult Create([Bind(Include = "OutfitId,BottomID,ShoeID,TopID")] Outfit outfit, List<int> SelectedAccessories)
         {
             if (ModelState.IsValid)
             {
+                var existingOutfit = outfit;
+
+                // change the existing properties to the new properties
+                existingOutfit.TopID = outfit.TopID;
+                existingOutfit.BottomID = outfit.BottomID;
+                existingOutfit.ShoeID = outfit.ShoeID;
+
+                existingOutfit.Accessories.Clear();
+
+                foreach (int accessoryId in SelectedAccessories)
+                {
+                    // find the accessory by its id and add it to the existing outfit
+                    existingOutfit.Accessories.Add(db.Accessories.Find(accessoryId));
+                }
                 db.Outfits.Add(outfit);
                 db.SaveChanges();
                 return RedirectToAction("Index");
