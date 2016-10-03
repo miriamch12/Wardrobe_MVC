@@ -196,6 +196,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Closet.jpg" />
     <Content Include="Content\Images\shorts.jpg" />
     <Content Include="Content\Images\cardigan.jpg" />
     <Content Include="Content\Images\bluepurse.jpg" />

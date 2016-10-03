@@ -31,21 +31,21 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Top.TopName)
-                <img src="@Url.Content(item.Top.TopPhoto)" />
+                <img class="picture" src="@Url.Content(item.Top.TopPhoto)" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Bottom.BottomName)
-                <img src="@Url.Content(item.Bottom.BottomPhoto)" />
+                <img class="picture" src="@Url.Content(item.Bottom.BottomPhoto)" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Shoe.ShoeName)
-                <img src="@Url.Content(item.Shoe.ShoePhoto)" />
+                <img class="picture" src="@Url.Content(item.Shoe.ShoePhoto)" />
             </td>           
             <td>
                 @foreach (var accessory in item.Accessories)
                 {
                    <div> @Html.DisplayFor(modelItem => accessory.AccessoryName) </div>
-                <img src="@Url.Content(accessory.AccessoryPhoto)" />
+                <img class="picture" src="@Url.Content(accessory.AccessoryPhoto)" />
                 }
 
             </td>

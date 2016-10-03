@@ -23,7 +23,32 @@ textarea {
     max-width: 280px;
 }
 
-img{
+.picture{
    height: 225px;
    width: 225px;
+}
+
+.jumbotron {
+
+    position: relative;
+    z-index: 1;
+}
+
+
+#header{
+    /*font-weight: bolder;
+    opacity: 1;*/
+}
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('Images/Closet.jpg');
+    opacity: .4;
+    width: 100%;
+    height: 100%;
 }
