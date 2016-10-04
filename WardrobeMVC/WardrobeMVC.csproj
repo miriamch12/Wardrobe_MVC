@@ -196,7 +196,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Bracelet.jpg" />
     <Content Include="Content\Images\Closet.jpg" />
+    <Content Include="Content\Images\Generic Accessory.jpg" />
+    <Content Include="Content\Images\Generic Bottom.jpg" />
+    <Content Include="Content\Images\Generic Shoes.jpg" />
+    <Content Include="Content\Images\Generic Top.jpg" />
     <Content Include="Content\Images\shorts.jpg" />
     <Content Include="Content\Images\cardigan.jpg" />
     <Content Include="Content\Images\bluepurse.jpg" />
